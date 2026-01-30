@@ -227,4 +227,4 @@ Ennen raportin luovutusta, tarkista:
 3. Jokaisesta on oma kuvakaappaus, jossa **response on selvästi näkyvissä**.
 4. Tehtävä 4 on kuvattu (ja halutessaan dokumentoitu selain-/Network-kuvalla).
 
-Näiden jälkeen raportointi ohjeiden mukaisesti on kunnossa.
+Näiden jälkeen raportointi pitäisi olla kunnossa.
