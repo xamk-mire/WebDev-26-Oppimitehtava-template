@@ -106,6 +106,14 @@ ASP.NET-backend lukee tietokantayhteyden ja JWT-salaisuuden **konfiguraatiosta**
 
 Sovellus hakee ne esim. näin (`Program.cs`): `Configuration.GetConnectionString("DefaultConnection")` tai `Configuration["DATABASE_URL"]`; `Configuration["JWT_SECRET"]`.
 
+Luo **appsettings.json** mikäli sitä ei vielä ole olemassa ja lisää sen sisälle **DefaultConnection** PostgreSQL-yhteys määritelmä (tarvitaan ef core komentojen ajossa, koska ef core ei lue launchSettings.json:a)
+
+```csharp
+"ConnectionStrings": {
+  "DefaultConnection": "Host=localhost;Port=5432;Database=template_backend;Username=postgres;Password=password"
+}
+```
+
 ---
 
 ### Paikallinen kehitys (`dotnet run` tai IDE)
