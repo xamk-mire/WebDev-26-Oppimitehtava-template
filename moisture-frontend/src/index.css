@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: all;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer utilities {
+  .neon {
+    --neon-color: currentColor;
+    text-shadow: 0 0 4px var(--neon-color), 0 0 10px var(--neon-color),
+      0 0 20px var(--neon-color), 0 0 40px var(--neon-color);
+  }
+
+  .neon-shadow {
+    --neon-color: currentColor;
+    box-shadow: 0 0 5px var(--neon-color), 0 0 15px var(--neon-color),
+      0 0 30px var(--neon-color);
+  }
+}
+
+@layer components {
+  .badge {
+    --neon-bg: rgba(255, 255, 255, 0.5); /* universal fallback */
+  }
+
+  /* DaisyUI theme variants */
+  .badge-primary {
+    --neon-bg: var(--color-primary);
+  }
+  .badge-secondary {
+    --neon-bg: var(--color-secondary);
+  }
+  .badge-accent {
+    --neon-bg: var(--color-accent);
+  }
+  .badge-info {
+    --neon-bg: var(--color-info);
+  }
+  .badge-success {
+    --neon-bg: var(--color-success);
+  }
+  .badge-warning {
+    --neon-bg: var(--color-warning);
+  }
+  .badge-error {
+    --neon-bg: var(--color-error);
+  }
+
+  /* Tailwind bg- utilities */
+  .badge[class*='bg-'] {
+    --neon-bg: rgb(var(--tw-bg-color) / var(--tw-bg-opacity));
+  }
+
+  /* Neon effect */
+  .badge-neon {
+    box-shadow: 0 0 6px var(--neon-bg), 0 0 12px var(--neon-bg),
+      0 0 24px var(--neon-bg), 0 0 36px var(--neon-bg);
+  }
+}
